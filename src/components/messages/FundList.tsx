@@ -4,16 +4,42 @@ import type { Fund } from "@/types/fund";
 const FUNDS: Fund[] = [
   {
     id: "motilal",
-    name: "Motilal Oswal Flex Cap Fund Direct Plan Growth",
+    name: "Motilal Oswal Flexicap Fund Direct Plan Growth",
     description: "High-alpha momentum fund with strong recent outperformance",
     rank: "Ranked 1/21 Flexi Cap Funds",
     performanceScore: 95,
     riskScore: 72,
     defaultTab: "alpha",
     insights: {
-      alpha: "Captured 158% of market gains over 1Y (Rank 1/21). Delivered +11.1% excess vs benchmark over last year (Rank 2/21). Action: Momentum-led outperformer; consider increasing weight.",
-      risk: "Most volatile in category, ~21% 1Y volatility (Rank 21/21). Action: Pair with a stability-focused low-vol fund.",
-      capture: "~112% down capture (weak protection; bottom quartile). Action: Size allocation carefully.",
+      return: [
+        {
+          label: "Return",
+          text: "An exceptional performer in rising markets, this fund captured 158% of market gains over 1 year, the best in its category.",
+          rank: "Rank 1/21"
+        },
+        {
+          label: "Return",
+          text: "It also delivered strong excess returns of +11.1% over its benchmark in the last year, placing it among the top funds.",
+          rank: "Rank 2/21"
+        }
+      ],
+      risk: [
+        {
+          label: "Risk",
+          text: "Investors should note this fund is the most volatile in its category, with returns fluctuating by 21% around its average over the past year.",
+          rank: "Rank 21/21"
+        },
+        {
+          label: "Risk",
+          text: "During market downturns, it provided weak protection, falling 112% of the market's decline over 1 year, placing it in the bottom quartile for this metric."
+        }
+      ],
+      trend: [
+        {
+          label: "Overall",
+          text: "Momentum-led outperformer with exceptional upside capture but higher volatility. Consider increasing weight for growth-focused portfolios."
+        }
+      ]
     }
   },
   {
@@ -25,9 +51,29 @@ const FUNDS: Fund[] = [
     riskScore: 68,
     defaultTab: "alpha",
     insights: {
-      alpha: "+6.1% 1Y excess return (top quartile) — strong recent turnaround. Action: Improving near-term; confirm persistence before overweight.",
-      risk: "Larger falls vs peers; bottom-quartile max drawdown across 1/3/5Y. Action: Smaller allocation or pair with low-vol.",
-      capture: "Note: Underperformed benchmark −2.0% over 5Y (Rank 17/18).",
+      return: [
+        {
+          label: "Trend",
+          text: "The fund shows a strong recent turnaround, with its 1-year excess return of +6.1% placing it in the top quartile, a significant improvement from its long-term performance."
+        },
+        {
+          label: "Return",
+          text: "Despite recent gains, its long-term record is weak, underperforming the benchmark by -2.0% over 5 years, ranking it in the bottom quartile.",
+          rank: "Rank 17/18"
+        }
+      ],
+      risk: [
+        {
+          label: "Risk",
+          text: "The fund has consistently experienced larger falls than its peers, with its maximum drawdown placing it in the bottom quartile across 1, 3, and 5-year periods."
+        }
+      ],
+      trend: [
+        {
+          label: "Overall",
+          text: "Improving near-term performance but weak long-term track record. Confirm persistence before overweight allocation."
+        }
+      ]
     }
   },
   {
@@ -39,23 +85,69 @@ const FUNDS: Fund[] = [
     riskScore: 45,
     defaultTab: "stdDev",
     insights: {
-      alpha: "Consistent top-quartile alpha across 1/3/5Y; ~76% up capture (lower participation in rallies). Action: Steadier but moderated upside.",
-      risk: "Best downside protection — only 35% of market fall (Rank 1/21); lowest volatility ~9% (Rank 1/21). Action: Strong core stabilizer.",
-      capture: "~76% up capture (lower participation in rallies). Action: Steadier but moderated upside.",
+      return: [
+        {
+          label: "Return",
+          text: "The trade-off for its stability is lower participation in rallies; it captured only 76% of market gains in the last year, placing it in the bottom quartile."
+        }
+      ],
+      risk: [
+        {
+          label: "Risk",
+          text: "Offers the best downside protection in its category, losing only 35% of the market's fall over 1 year.",
+          rank: "Rank 1/21"
+        },
+        {
+          label: "Risk",
+          text: "This is the most stable fund in its class, with the lowest volatility of just 9% over the past year, making it a top-quartile performer on this front.",
+          rank: "Rank 1/21"
+        }
+      ],
+      consistency: [
+        {
+          label: "Consistency",
+          text: "A highly consistent performer, this fund has remained in the top quartile for excess returns (Alpha) across 1, 3, and 5-year periods."
+        }
+      ],
+      trend: [
+        {
+          label: "Overall",
+          text: "Strong core stabilizer with excellent risk management. Steadier performance but moderated upside in rallies."
+        }
+      ]
     }
   },
   {
     id: "hdfc",
-    name: "HDFC Flexi Cap Fund - Direct Plan - Growth Option",
+    name: "HDFC Flexi Cap Fund -Direct Plan - Growth Option",
     description: "Reliable balanced compounder across market cycles",
     rank: "Ranked 2/21 Flexi Cap Funds",
     performanceScore: 88,
     riskScore: 55,
     defaultTab: "alpha",
     insights: {
-      alpha: "Top-quartile excess returns across 1/3/5Y. Action: Reliable compounder for core holding.",
-      risk: "~11% volatility; 5Y downside protection improved from bottom → top quartile. Action: Balanced profile; SIP-friendly.",
-      capture: "Balanced capture ratios across up and down markets.",
+      return: [
+        {
+          label: "Consistency",
+          text: "This fund is a very strong and consistent performer, ranking in the top quartile for excess returns (Alpha) across 1, 3, and 5 years."
+        }
+      ],
+      risk: [
+        {
+          label: "Risk",
+          text: "It provides excellent risk management, ranking in the top quartile for low volatility (11%) and for protecting capital during downturns over the past year."
+        },
+        {
+          label: "Risk",
+          text: "Its 5-year downside protection has improved remarkably, moving from the bottom quartile two years ago to the top quartile today."
+        }
+      ],
+      trend: [
+        {
+          label: "Overall",
+          text: "Reliable compounder for core holding with balanced profile. SIP-friendly with improving risk metrics."
+        }
+      ]
     }
   },
 ];

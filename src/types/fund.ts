@@ -1,3 +1,9 @@
+export interface InsightItem {
+  label: string;
+  text: string;
+  rank?: string;
+}
+
 export interface Fund {
   id: string;
   name: string;
@@ -7,10 +13,10 @@ export interface Fund {
   riskScore: number;
   defaultTab: "alpha" | "stdDev" | "upCapture" | "indmoney";
   insights: {
-    alpha: string;
-    risk: string;
-    capture: string;
-    overall?: string;
+    return: InsightItem[];
+    risk: InsightItem[];
+    consistency?: InsightItem[];
+    trend?: InsightItem[];
   };
 }
 

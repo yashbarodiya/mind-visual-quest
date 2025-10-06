@@ -51,13 +51,7 @@ export const UpCaptureTab = ({ fund, timeFilter }: UpCaptureTabProps) => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-semibold text-foreground mb-1">Market Participation Trend</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          How well does this fund capture rallies?
-        </p>
-        <p className="text-xs text-muted-foreground mb-4">
-          Up capture = participation in rising markets (higher is better). Down capture = loss control (lower is better).
-        </p>
+        <h3 className="text-lg font-semibold text-foreground mb-1">Consistency</h3>
         <TrendChart data={trendData} quartileLabels={quartileLabels} />
       </div>
 
@@ -66,7 +60,11 @@ export const UpCaptureTab = ({ fund, timeFilter }: UpCaptureTabProps) => {
         <ComparisonBars data={comparisonData} />
       </div>
 
-      <InsightCard title="Capture Insight" insight={fund.insights.capture} />
+      <div className="space-y-3">
+        {fund.insights.consistency?.map((insight, idx) => (
+          <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
+        ))}
+      </div>
     </div>
   );
 };

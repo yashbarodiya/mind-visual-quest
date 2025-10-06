@@ -51,10 +51,7 @@ export const AlphaTab = ({ fund, timeFilter }: AlphaTabProps) => {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-semibold text-foreground mb-1">Alpha Score Trend</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Percentile rank within category — lower is better.
-        </p>
+        <h3 className="text-lg font-semibold text-foreground mb-1">Return</h3>
         <TrendChart data={trendData} quartileLabels={quartileLabels} />
       </div>
 
@@ -63,7 +60,11 @@ export const AlphaTab = ({ fund, timeFilter }: AlphaTabProps) => {
         <ComparisonBars data={comparisonData} />
       </div>
 
-      <InsightCard title="Alpha Insight" insight={fund.insights.alpha} />
+      <div className="space-y-3">
+        {fund.insights.return.map((insight, idx) => (
+          <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
+        ))}
+      </div>
     </div>
   );
 };
