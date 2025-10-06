@@ -47,16 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        header: "hsl(var(--header-bg))",
+        gold: "hsl(var(--gold))",
+        success: {
+          bg: "hsl(var(--success-bg))",
+          text: "hsl(var(--success-text))",
         },
+        "chart-grid": "hsl(var(--chart-grid))",
+        "insight-bg": "hsl(var(--insight-bg))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +78,39 @@ export default {
             height: "0",
           },
         },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "slide-up": {
+          "0%": {
+            transform: "translateY(100%)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
+        "draw-line": {
+          "0%": {
+            strokeDashoffset: "1000",
+          },
+          "100%": {
+            strokeDashoffset: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fade-in-up 300ms cubic-bezier(0.2,0.8,0.2,1)",
+        "slide-up": "slide-up 220ms cubic-bezier(0.2,0.8,0.2,1)",
+        "draw-line": "draw-line 500ms ease-out",
       },
     },
   },
