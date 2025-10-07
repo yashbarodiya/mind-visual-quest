@@ -219,7 +219,7 @@ export const IndmoneyTab = ({ fund, timeFilter }: IndmoneyTabProps) => {
       </div>
 
       {fund.insights.trend && (
-        <div className="space-y-3">
+        <div className="space-y-3 pb-4">
           {fund.insights.trend.map((insight, idx) => (
             <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
           ))}

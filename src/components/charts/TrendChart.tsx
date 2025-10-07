@@ -7,9 +7,9 @@ interface TrendChartProps {
 
 export const TrendChart = ({ data, quartileLabels }: TrendChartProps) => {
   const maxY = 21;
-  const chartHeight = 240;
-  const chartWidth = 400;
-  const padding = { top: 10, right: 20, bottom: 40, left: 50 };
+  const chartHeight = 260;
+  const chartWidth = 420;
+  const padding = { top: 10, right: 20, bottom: 40, left: 120 };
   
   const plotHeight = chartHeight - padding.top - padding.bottom;
   const plotWidth = chartWidth - padding.left - padding.right;
@@ -45,14 +45,16 @@ export const TrendChart = ({ data, quartileLabels }: TrendChartProps) => {
               width={plotWidth}
               height={quartileHeight}
               fill={quartileColors[i]}
-              opacity="0.15"
+              opacity="0.25"
             />
             <text
-              x={padding.left + 5}
-              y={padding.top + i * quartileHeight + 15}
-              fontSize="10"
-              fill="hsl(var(--muted-foreground))"
-              fontWeight="500"
+              x={padding.left - 10}
+              y={padding.top + i * quartileHeight + quartileHeight / 2}
+              fontSize="12"
+              fill="hsl(var(--foreground))"
+              fontWeight="600"
+              textAnchor="end"
+              dominantBaseline="middle"
             >
               {label}
             </text>

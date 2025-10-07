@@ -60,7 +60,7 @@ export const AlphaTab = ({ fund, timeFilter }: AlphaTabProps) => {
         <ComparisonBars data={comparisonData} />
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-3 pb-4">
         {fund.insights.return.map((insight, idx) => (
           <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
         ))}
