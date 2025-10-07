@@ -50,20 +50,20 @@ export const StdDeviationTab = ({ fund, timeFilter }: StdDeviationTabProps) => {
 
   return (
     <div className="space-y-6">
+      <div className="space-y-3">
+        {fund.insights.risk.map((insight, idx) => (
+          <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
+        ))}
+      </div>
+
       <div>
-        <h3 className="text-lg font-semibold text-foreground mb-1">Risk</h3>
+        <h3 className="text-lg font-semibold text-foreground mb-1">Volatility Trend</h3>
         <TrendChart data={trendData} quartileLabels={quartileLabels} />
       </div>
 
       <div>
         <h4 className="text-base font-semibold text-foreground mb-3">Where it stands now</h4>
         <ComparisonBars data={comparisonData} />
-      </div>
-
-      <div className="space-y-3 pb-4">
-        {fund.insights.risk.map((insight, idx) => (
-          <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
-        ))}
       </div>
     </div>
   );

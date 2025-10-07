@@ -148,6 +148,14 @@ export const IndmoneyTab = ({ fund, timeFilter }: IndmoneyTabProps) => {
 
   return (
     <div className="space-y-6">
+      {fund.insights.trend && (
+        <div className="space-y-3">
+          {fund.insights.trend.map((insight, idx) => (
+            <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
+          ))}
+        </div>
+      )}
+
       {/* Summary Card */}
       <div className="bg-card border border-border rounded-2xl p-4">
         <div className="flex items-start gap-4 mb-4">
@@ -193,7 +201,7 @@ export const IndmoneyTab = ({ fund, timeFilter }: IndmoneyTabProps) => {
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold text-foreground mb-4">Historical INDmoney Ranking</h3>
+        <h3 className="text-lg font-semibold text-foreground mb-4">Historical INDmoney Ranking Trend</h3>
         
         {/* Metric Selection Chiclets */}
         <div className="flex flex-wrap gap-2 mb-4">
@@ -217,14 +225,6 @@ export const IndmoneyTab = ({ fund, timeFilter }: IndmoneyTabProps) => {
           quartileLabels={quartileLabelsMap[activeMetric]} 
         />
       </div>
-
-      {fund.insights.trend && (
-        <div className="space-y-3 pb-4">
-          {fund.insights.trend.map((insight, idx) => (
-            <InsightCard key={idx} title={insight.label} insight={insight.text} rank={insight.rank} />
-          ))}
-        </div>
-      )}
     </div>
   );
 };
